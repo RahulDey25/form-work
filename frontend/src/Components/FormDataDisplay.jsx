@@ -13,15 +13,15 @@ const FormDataDisplay = () => {
     const fetchData = async () => {
       try {
         // Fetch countries data
-        const countriesResponse = await axios.get(`http://localhost:3000/api/countries`);
+        const countriesResponse = await axios.get(`https://form-work.onrender.com/api/countries`);
         setCountries(countriesResponse.data);
 
         // Fetch states data
-        const statesResponse = await axios.get(`http://localhost:3000/api/states/${formData.country}`);
+        const statesResponse = await axios.get(`https://form-work.onrender.com/api/states/${formData.country}`);
         setStates(statesResponse.data);
 
         // Fetch cities data
-        const citiesResponse = await axios.get(`http://localhost:3000/api/cities/${formData.state}`);
+        const citiesResponse = await axios.get(`https://form-work.onrender.com/api/cities/${formData.state}`);
         setCities(citiesResponse.data);
       } catch (error) {
         console.error("Error fetching data:", error);

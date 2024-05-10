@@ -26,7 +26,7 @@ const Form = () => {
   useEffect(() => {
     const fetchCountries = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/countries');
+        const response = await axios.get('https://form-work.onrender.com/api/countries');
         setCountries(response.data);
       } catch (error) {
         console.error('Error fetching countries:', error);
@@ -39,7 +39,7 @@ const Form = () => {
     const fetchStates = async () => {
       try {
         if (formData.country) {
-          const response = await axios.get(`http://localhost:3000/api/states/${formData.country}`);
+          const response = await axios.get(`https://form-work.onrender.com/api/states/${formData.country}`);
           setStates(response.data);
           setFormData((prevData) => ({ ...prevData, state: '', city: '' }));
         } else {
@@ -57,7 +57,7 @@ const Form = () => {
     const fetchCities = async () => {
       try {
         if (formData.state) {
-          const response = await axios.get(`http://localhost:3000/api/cities/${formData.state}`);
+          const response = await axios.get(`https://form-work.onrender.com/api/cities/${formData.state}`);
           setCities(response.data);
         } else {
           setCities([]);
