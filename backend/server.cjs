@@ -37,7 +37,7 @@ const City = mongoose.model("City", citySchema);
 const app = express();
 app.use(cors());
 app.use(express.json());
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.VITE_REACT_APP_PORT;
 const mongoURI = process.env.VITE_REACT_APP_MONGODB_STRING;
 
 mongoose
